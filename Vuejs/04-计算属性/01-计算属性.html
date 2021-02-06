@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <!-- 计算属性，也可以直接拼接，或者定义method，再调用method-->
+  <h2>{{fullName}}</h2>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  let app = new Vue({
+    el: "#app",
+    data: {
+      firstName: "world",
+      lastName: "hello"
+    },
+    computed: {
+      // 计算属性
+      fullName: function () {
+        return this.firstName + " " + this.lastName
+      }
+    }
+  })
+</script>
+</body>
+</html>

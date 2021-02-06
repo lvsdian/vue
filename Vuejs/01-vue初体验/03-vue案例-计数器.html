@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  当前计数：{{counter}}
+  <!--  @是语法糖  -->
+  <button v-on:click="counter ++">+</button>
+  <button @click="counter --">-</button>
+  <button @click="add">+</button>
+  <button v-on:click="sub">-</button>
+</div>
+
+
+<script src="../js/vue.js"></script>
+<script>
+  // let变量；const常量
+  let app = new Vue({
+    el: "#app", // 用于挂载要管理的元素
+    data: {     // 定义数据
+      counter: 0,
+    },
+    methods: {
+      // 定义方法
+      add: function () {
+        console.log("加");
+        this.counter++;
+      },
+      sub: function () {
+        console.log("减")
+        this.counter--;
+      }
+    }
+  })
+</script>
+
+</body>
+</html>

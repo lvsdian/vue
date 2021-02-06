@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <!-- message会覆盖111，只显示message -->
+  <h2 v-text="message">111</h2>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  let app = new Vue({
+    el: "#app",
+    data: {
+      message: "hello",
+    }
+  })
+</script>
+</body>
+</html>

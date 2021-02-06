@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .active {
+        color: red;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+
+  <!-- 普通class与动态绑定class可以共存 -->
+  <h2 class="test" :class="[active, line]">{{message}}</h2>
+
+  <!-- getClasses()调用函数 -->
+  <h2 class="test" v-bind:class="getClasses()">{{message}}</h2>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  let app = new Vue({
+    el: "#app",
+    data: {
+      message: "hello",
+      active: "active",
+      line: "line"
+    },
+    methods: {
+      getClasses: function () {
+        // 数组
+        return [this.active, this.line]
+      }
+    }
+  })
+</script>
+</body>
+</html>
